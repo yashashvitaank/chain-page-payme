@@ -1,0 +1,20 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+  --background: #fff;
+  --foreground: #000;
+  --primary-yellow: #fec87f;
+  --primary-orange: #f58d83;
+  --primary-teal: #78cdd1;
+  --primary-blue: #007084;
+  --primary-dark-gray: #231f20
+}
+
+.homeBackground {
+  background-image: url("/public/background.png");
+  background-position: top;
+  background-repeat: no-repeat;
+  background-size:contain 250px;
+}
