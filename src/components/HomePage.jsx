@@ -3,7 +3,7 @@ import NavBar from "./NavBar"
 
 function HomePage() {
   return (
-    <div className=" bg-zinc-50 mt-[46px]">
+    <div className=" bg-zinc-50">
         <NavBar />
         <HomeContent />
     </div>

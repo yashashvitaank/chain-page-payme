@@ -8,7 +8,7 @@ function HomeContent() {
   return (
     <div className='w-full px-20 pb-4'><SearchInput />
     <GeneralSection />
-        <div className='w-full flex justify-center items-center gap-4'>
+        <div className='w-full flex justify-center items-center gap-4 flex-col lg:flex-row'>
             <TableSection data={blocks} type="blocks" />
             <TableSection data={transactions}  type="transactions"/>
         </div>
