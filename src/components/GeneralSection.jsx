@@ -4,9 +4,9 @@ import LineChart from './LineChart'
 function GeneralSection() {
   return (
     <div className='w-full flex justify-center relative'>
-        <div className='bg-white min-h-40 shadow-md rounded-xl -translate-y-[20%]'>
-          <div className='flex'>
-            <div className='mt-[1.5vw] px-[2vw] border-r-[grey] border-r border-solid'>
+        <div className='bg-white w-full min-h-40 shadow-md rounded-xl -translate-y-[20%]'>
+          <div className='flex space-x-5'>
+            <div className='mt-[1.5vw] px-[12vw] border-r-[grey] border-r border-solid'>
               <div>
                 <div>
                 <h3>POL PRICE</h3>
@@ -18,7 +18,7 @@ function GeneralSection() {
                 </div>
               </div>
             </div>
-            <div className='ml-[2vw] mt-[1.5vw] px-[2vw] border-r-[grey] border-r border-solid'>
+            <div className='ml-[6vw] mt-[1.5vw] px-[2vw] '>
               <div className='flex'>
                 <div>
                 <h3>TRANSACTIONS</h3>

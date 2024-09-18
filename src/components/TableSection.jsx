@@ -23,7 +23,7 @@ function TableSection({data, type}) {
           <p style={{color: color, fontWeight: "bold"}}>{rowData.id}</p>
           <p className=''>{rowData.time}</p>
         </div>
-        <div className='flex flex-col'>
+        <div className='flex flex-col ml-20'>
           {isBlock ? <Column upperText={rowData.validated_by} lowerText={rowData.transactions} trnTime={rowData?.transaction_time} /> : <Column upperText={rowData.from} lowerText={rowData.to} />}
         </div>
         </div>
