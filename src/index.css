@@ -10,11 +10,12 @@
   --primary-teal: #78cdd1;
   --primary-blue: #007084;
   --primary-dark-gray: #231f20
+  --primary-pink: #EF4680;
 }
 
-.homeBackground {
+/* .homeBackground {
   background-image: url("/public/background.png");
   background-position: top;
   background-repeat: no-repeat;
   background-size:contain 250px;
-}
+} */

@@ -1,18 +1,17 @@
-import React from 'react'
+import { blocks } from '../data/blocks'
+import { transactions } from '../data/transactions'
 import SearchInput from './SearchInput'
 import GeneralSection from './GeneralSection'
 import TableSection from './TableSection'
 
 function HomeContent() {
   return (
-    <div className='w-full'><SearchInput />
+    <div className='w-full px-20 pb-4'><SearchInput />
     <GeneralSection />
-    <div className='w-[90%] '>
         <div className='w-full flex justify-center items-center gap-4'>
-            <TableSection/>
-            <TableSection/>
+            <TableSection data={blocks} type="blocks" />
+            <TableSection data={transactions}  type="transactions"/>
         </div>
-    </div>
     </div>
   )
 }

@@ -13,7 +13,8 @@ export default {
         "primary-orange": "var(--primary-orange)",
         "primary-blue": "var(--primary-blue)",
         "primary-teal": "var(--primary-teal)",
-        "primary-dark-gray": "var(--primary-dark-gray)"
+        "primary-dark-gray": "var(--primary-dark-gray)",
+        "primary-pink": "var(--primary-pink)"
       },
     },
   },
