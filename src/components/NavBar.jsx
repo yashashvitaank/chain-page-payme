@@ -1,7 +1,9 @@
 import React, { useState } from "react";
+import Logo from "/logoblack.svg";
 import NavigationActions from "./NavigationActions";
 import { Link } from "react-router-dom";
 import MenuIcon from "/public/menu.svg";
+
 
 function NavBar() {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -10,9 +12,7 @@ function NavBar() {
   };
   return (
     <div className="w-full flex justify-between items-center md:px-12 h-14 border-b-2 bg-white border-zinc-400">
-      <p className="font-bold text-lg pl-2 text-primary-blue tracking-wider">
-        PayME
-      </p>
+      <img src={Logo} alt="logo" width={120} height={80} className="pb-2" />
       <button onClick={toggleNav} className="md:hidden border-none px-4">
         <img src={MenuIcon} alt="" width={35} />
       </button>

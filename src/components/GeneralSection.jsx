@@ -1,44 +1,41 @@
-import React from 'react'
+import React, { Children } from 'react'
 import LineChart from './LineChart'
+import { comma } from 'postcss/lib/list'
 
 function GeneralSection() {
-  return (
-    <div className='w-full flex justify-center relative'>
-        <div className='bg-white w-full min-h-40 shadow-md rounded-xl -translate-y-[20%]'>
-          <div className='flex space-x-5'>
-            <div className='mt-[1.5vw] px-[12vw] border-r-[grey] border-r border-solid'>
-              <div>
-                <div>
-                <h3>POL PRICE</h3>
-                <p>$0.38 @0.000006 BTC</p>
-                </div>
-                <div className='mt-[1vw] pt-[0.5vw] border-t-[grey] border-t border-solid'>
-                <h3>POL MARKET CAP ON POLYGON</h3>
-                <p>$3,949,745,627,00(10,259,155,118POL)</p>
-                </div>
-              </div>
-            </div>
-            <div className='ml-[6vw] mt-[1.5vw] px-[2vw] '>
-              <div className='flex'>
-                <div>
-                <h3>TRANSACTIONS</h3>
-                <p>4,437.12M(29.4PTS)</p>
-                </div>
-                <div className='ml-[6vw]'>
-                <h3>MED GAS PRICE</h3>
-                <p>30 Gwel ($0.01)</p>
-                </div>
-              </div>
-              <div className='mt-[1vw] pt-[0.5vw] border-t-[grey] border-t border-solid'>
-              <h3>LATEST BLOCK</h3>
-              <p>61943923(2.1s)</p>
-              </div>
-            </div>
-            {/* <div className='ml-[5vw]'>
-              <LineChart></LineChart>
-            </div> */}
-          </div>
+  const generalSection = [
+    {
+      label: "Column 1",
+      content: "Column 1"
+    },
+    {
+      label: "Column 2",
+      content: "Column 2"
+    },
+    {
+      label: "Column 3",
+      content: "Column 3"
+    },
+    {
+      label: "Column 4",
+      content: "Column 4"
+    },
+  ]
+  function Column ({label, content}){
+    return (
+      
+        <div className='border-b border-zinc-200  md:border-l p-4'>
+          <p className='text-base'>{label}</p>
+          <p className='text-lg font-semibold'>{content}</p>
         </div>
+
+    )
+  }
+  return (
+    <div className='w-full bg-white rounded-xl mb-4 flex flex-col md:grid md:grid-cols-2 md:grid-rows-2 my-4'>
+      {Children.toArray(
+        generalSection.map((columnText) => <Column {...columnText} />)
+      )}
     </div>
   )
 }

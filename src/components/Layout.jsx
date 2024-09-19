@@ -3,6 +3,7 @@ import { Outlet } from "react-router-dom";
 
 import PriceTab from "./PriceTab";
 import NavBar from "./NavBar";
+import Footer from "./Footer";
 
 function Layout() {
   return (
@@ -10,7 +11,7 @@ function Layout() {
       <PriceTab price="$3210" />
       <NavBar/>
       <Outlet />
-      <footer>Footer here</footer>
+      <Footer />
     </div>
   );
 }
