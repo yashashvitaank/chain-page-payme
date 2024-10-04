@@ -3,8 +3,21 @@ import { transactions } from '../data/transactions'
 import SearchInput from './SearchInput'
 import GeneralSection from './GeneralSection'
 import TableSection from './TableSection'
+import { useEffect } from 'react'
 
 function HomeContent() {
+  const getChainData = async() => {
+    try {
+      const res = await fetch("https://backend-connect.paymefin.tech/api/external/get-chain-data", {method: "post"}).then(res => res.json());
+      console.log("response", res);
+    }
+    catch (err) {
+      console.error(err);
+    }
+  }
+  useEffect(()=> {
+    getChainData();
+  }, []);
   return (
     <div className='w-full p-2 md:px-20 pb-4'>
       <SearchInput />
