@@ -1,43 +1,52 @@
-import React, { Children } from 'react'
-import LineChart from './LineChart'
-import { comma } from 'postcss/lib/list'
+import React from 'react';
+import { transactions } from '../data/transactions'; 
 
-function GeneralSection() {
-  const generalSection = [
-    {
-      label: "Column 1",
-      content: "Column 1"
-    },
-    {
-      label: "Column 2",
-      content: "Column 2"
-    },
-    {
-      label: "Column 3",
-      content: "Column 3"
-    },
-    {
-      label: "Column 4",
-      content: "Column 4"
-    },
-  ]
-  function Column ({label, content}){
+function TransactionRow({ id, validator, time, txnCount, txnDuration }) {
     return (
-      
-        <div className='border-b border-zinc-200  md:border-l p-4'>
-          <p className='text-base'>{label}</p>
-          <p className='text-lg font-semibold'>{content}</p>
+        <div className='grid grid-cols-2 gap-4 border-b border-gray-200 p-4'>
+            <div className='flex flex-col'>
+                <p className='text-pink-500 font-bold'>{id}</p>
+                <p className='text-sm'>
+                    Validated by <span className='text-pink-500'>{validator}</span>
+                </p>
+            </div>
+            <div className='flex flex-col'>
+                <p className='text-gray-500'>{time}</p>
+                <p className='text-pink-500'>
+                    {txnCount} <span className='text-gray-500'>{txnDuration}</span>
+                </p>
+            </div>
         </div>
-
-    )
-  }
-  return (
-    <div className='w-full bg-white rounded-xl mb-4 flex flex-col md:grid md:grid-cols-2 md:grid-rows-2 my-4'>
-      {Children.toArray(
-        generalSection.map((columnText) => <Column {...columnText} />)
-      )}
-    </div>
-  )
+    );
 }
 
-export default GeneralSection
+function GeneralSection() {
+    return (
+        <div className='w-full bg-white rounded-xl mb-4 my-4'>
+            <div className='grid grid-cols-2 gap-4'>
+                <div className='flex flex-col'>
+                    <h2 className='text-xl font-bold p-4'>Top Transactions</h2>
+                    <div className='bg-white'>
+                        {transactions.slice(0, 3).map((transaction, index) => (
+                            <TransactionRow key={index} {...transaction} />
+                        ))}
+                    </div>
+                </div>
+
+                <div className='flex flex-col'>
+                    <h2 className='text-xl font-bold p-4'>All Transactions</h2>
+                    <div className='overflow-y-scroll max-h-64 scrollbar-hidden bg-white'>
+                        {transactions.map((transaction, index) => (
+                            <TransactionRow key={index} {...transaction} />
+                        ))}
+                        {transactions.map((transaction, index) => (
+                            <TransactionRow key={index + transactions.length} {...transaction} />
+                        ))}
+                    </div>
+                </div>
+            </div>
+        </div>
+    );
+}
+
+export default GeneralSection;

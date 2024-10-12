@@ -20,3 +20,13 @@
   background-repeat: no-repeat;
   background-size:contain 250px;
 } */
+
+/* styles.css or your global CSS file */
+.scrollbar-hidden::-webkit-scrollbar {
+  display: none; /* Safari and Chrome */
+}
+
+.scrollbar-hidden {
+  -ms-overflow-style: none;  /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
